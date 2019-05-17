@@ -1,10 +1,10 @@
 provider "aws" {
-  access_key = "${var.access_key}"
-  secret_key = "${var.secret_key}"
+  #access_key = "${var.access_key}"
+  #secret_key = "${var.secret_key}"
   region     = "${var.region}"
 }
 
-module "web" {
+module "ec2" {
   source          = "./modules/ec2"
   count           = "${var.count}"
   ami             = "${lookup(var.amis, var.region)}"

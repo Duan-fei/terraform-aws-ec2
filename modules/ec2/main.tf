@@ -1,4 +1,4 @@
-resource "aws_instance" "web" {
+resource "aws_instance" "this" {
   count           = "${var.count}"
   ami             = "${var.ami}"
   instance_type   = "${var.type}"
