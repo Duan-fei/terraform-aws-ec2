@@ -1,10 +1,14 @@
+variable "region" {
+  description = "Region Name"
+}
+
 variable "count" {
   description = "Number of instances to start"
 }
 
 variable "amis" {
-  type = "map"  
   description = "The id group of the underlying image"
+  default = "ami-080b4eecd555d049c"
 }
 
 variable "type" {
