@@ -17,9 +17,9 @@ variable "count" {
   description = "Number of instances to start"
 }
 
-variable "ami" {
-  description = "Base mirror id"
-}
+#variable "ami" {
+#  description = "Base mirror id"
+#}
 
 variable "type" {
   description = "The type of instance to start"

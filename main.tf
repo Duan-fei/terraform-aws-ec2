@@ -5,7 +5,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "this" {
-  count           = "${var.count}"
+  #count           = "${var.count}"
   ami             = "${var.ami}"
   instance_type   = "${var.type}"
   key_name        = "${var.key_name}"
