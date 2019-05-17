@@ -4,17 +4,15 @@ provider "aws" {
   region     = "${var.region}"
 }
 
-resource "aws_instance" "this" {
-  #count           = "${var.count}"
-  ami             = "${var.ami}"
-  instance_type   = "${var.type}"
+module "ec2" {
+  source          = "./modules/ec2"
+  count           = "${var.count}"
+  ami             = "${lookup(var.amis, var.region)}"
+  type            = "${var.type}"
   key_name        = "${var.key_name}"
-  monitoring      = "${var.monitor}"
+  monitor         = "${var.monitor}"
   subnet_id       = "${var.subnet_id}"
-  vpc_security_group_ids = ["${var.vpc_ids}"]
-  disable_api_termination = "${var.termination}"
-
-  tags {
-    Name = "${var.tag_name}-${count.index + 1}"
-  }
+  vpc_ids         = ["${var.vpc_ids}"]
+  termination     = "${var.termination}"
+  tag_name        = "${var.tag_name}"
 }
