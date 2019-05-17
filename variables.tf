@@ -1,22 +1,24 @@
 variable "access_key" {
   description = "aws access_key"
+  default = "AKIA3PNHZ5GTGHOMD5HO"
 }
 
 variable "secret_key" {
   description = "aws secret_key"
+  default = "/ZRjMrrJYsCpbumxOyVV4cqDYFfvXK5ncQEmh62P"
 }
 
 variable "region" {
   description = "aws the available area"
+  default = "cn-northwest-1"
 }
 
 variable "count" {
   description = "Number of instances to start"
 }
 
-variable "amis" {
-  type = "map"  
-  description = "The id group of the underlying image"
+variable "ami" {
+  description = "Base mirror id"
 }
 
 variable "type" {
