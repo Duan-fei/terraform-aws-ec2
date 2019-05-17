@@ -1,6 +1,4 @@
 secrets.tfvars
 .terraform/
 terraform/
-terraform.tfstate.*
-terraform.tfstate
-terraform.tfvars
+terraform.tfstate*
